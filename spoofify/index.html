@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spoofify</title>
+        <style>
+            :root {
+                --color-primary: #1CD761;
+                --color-black: #000000;
+                --color-white: #FFFFFF;
+            }
+
+            html {
+                height: 100%;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100%;
+                background: var(--color-primary);
+                padding: 0 25%;
+                margin: 0;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 4rem;
+
+                #brand {
+                    font-size: 1.6rem;
+                }
+
+                nav ul {
+                    display: flex;
+                    gap: 0.2rem;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    a {
+                        text-decoration: none;
+                        color: var(--color-white);
+                        border: 1px solid var(--color-white);
+                        padding: 0.5em;
+                        border-radius: 2em;
+                    }
+                }
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            main {
+                flex-grow: 1;
+            }
+
+            footer {
+                display: flex;
+                align-items: center;
+                padding: 0 1rem;
+                background-color: #FFFFFF99;
+                border-radius: 16px 16px 0 0;
+                height: 3rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div id="brand">
+                Spoofify
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Top of your birthweek</a></li>
+                    <li><a href="#">Latest releases randomized</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Your spoofed overview</h1>
+            <p>Welcome to Spoofify, <em>the rip-off music streaming service</em> of ICT module 294!</p>
+            <h2>Top of your birthweek</h2>
+            <ol>
+                <li><strong>Jump</strong> by <em>Kris Kross</em></li>
+                <li><strong>My Lovin</strong> by <em>En Vouge</em></li>
+                <li><strong>Bohemian Rhapsody</strong> by <em>Queen</em></li>
+                <li><strong>Save The Best For Last</strong> by <em>Vanesssa Williams</em></li>
+                <li><strong>Live And Learn</strong> by <em>Joe Publics</em></li>
+            </ol>
+            <h2>Latest releases randomized</h2>
+            <div class="gallery">
+                <img src="https://picsum.photos/id/30/200/200" alt="Bild 1" />
+                <img src="https://picsum.photos/id/40/200/200" alt="Bild 2" />
+                <img src="https://picsum.photos/id/10/200/200" alt="Bild 3" />
+                <img src="https://picsum.photos/id/20/200/200" alt="Bild 4" />
+                <img src="https://picsum.photos/id/35/200/200" alt="Bild 5" />
+                <img src="https://picsum.photos/id/60/200/200" alt="Bild 6" />
+            </div>
+        </main>
+        <footer>
+            &copy; 2023 Spooky Example, Inc.
+        </footer>
+    </body>
+
+</html>
