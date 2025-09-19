@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+            #box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            transition: all 1s linear;
+            }
+
+            .big {
+            width: 400px !important;
+            height: 400px !important;
+            background-color: red !important;
+            transform: rotate(-45deg);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+
+        <button id="btn">click me</button>
+
+        <script>
+            const btnEl = document.getElementById("btn");
+            const boxEl = document.getElementById("box");
+
+            btnEl.addEventListener("click", () => {
+                boxEl.classList.toggle("big");
+                console.log(boxEl.className);
+            })
+        </script>
+    </body>
+</html>

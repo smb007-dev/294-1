@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <h1 id="first">0</h1>
+
+        <h1 id="second">0</h1>
+
+        <button id="btn1">Click me</button>
+
+        <button id="btn2">Click me</button>
+
+        <div id="container" style="border: solid; height: 500px; width: 500px; margin-top: 50px; border-color: green; background-color: chartreuse;">
+            <img src="soccer-ball-svgrepo-com.svg" alt="ball" style="width: 50px; height: 50px;">
+        </div>
+
+        <script>
+            const btn1El = document.getElementById('btn1');
+            const h1FirstEl = document.getElementById('first');
+            
+            const btn2El = document.getElementById('btn2');
+            const h1SecondEl = document.getElementById('second');
+
+            btn1El.addEventListener("click", () => {
+                h1FirstEl.textContent = parseInt(h1FirstEl.textContent) + 1;
+            })
+
+            btn2El.addEventListener("click", () => {
+                h1SecondEl.textContent = parseInt(h1SecondEl.textContent) + 1;
+            })
+
+            const imgEl = document.querySelector("#container img");
+            const containerEl = document.getElementById("container");
+
+            containerEl.style.position = "relative";
+            imgEl.style.position = "absolute";
+
+            containerEl.addEventListener("click", (event) => {
+                const rect = containerEl.getBoundingClientRect();
+                const x = event.clientX - rect.left - imgEl.offsetWidth / 2;
+                const y = event.clientY - rect.top - imgEl.offsetHeight / 2;
+
+                imgEl.style.left = x + "px";
+                imgEl.style.top = y + "px";
+            })
+        </script>
+    </body>
+</html>

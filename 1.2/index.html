@@ -97,6 +97,10 @@
                 <li><strong>Live And Learn</strong> by <em>Joe Publics</em></li>
             </ol>
             <h2>Latest releases randomized</h2>
+
+            <button id="add">Add three more</button>
+            <button id="remove">Remove first three</button>
+
             <div class="gallery">
                 <img src="https://picsum.photos/id/30/200/200" alt="Bild 1" />
                 <img src="https://picsum.photos/id/40/200/200" alt="Bild 2" />
@@ -105,6 +109,30 @@
                 <img src="https://picsum.photos/id/35/200/200" alt="Bild 5" />
                 <img src="https://picsum.photos/id/60/200/200" alt="Bild 6" />
             </div>
+
+            <script>
+                const btn1El = document.getElementById('add');
+                const btn2El = document.getElementById('remove');
+
+                btn1El.addEventListener("click", () => {
+                    const galleryEl = document.querySelector(".gallery");
+                    for (let i = 0; i < 3; i++) {
+                        const randomId = Math.floor(Math.random() * 100);
+                        const imgEl = document.createElement("img");
+                        imgEl.src = `https://picsum.photos/id/${randomId}/200/200`;
+                        imgEl.alt = `Bild ${randomId}`;
+                        galleryEl.appendChild(imgEl);
+                    }
+                })
+
+                btn2El.addEventListener("click", () => {
+                    const galleryEl = document.querySelector(".gallery");
+                    galleryEl.removeChild(galleryEl.children[0]);
+                    galleryEl.removeChild(galleryEl.children[1]);
+                    galleryEl.removeChild(galleryEl.children[2]);   
+                })
+            </script>
+
         </main>
         <footer>
             &copy; 2023 Spooky Example, Inc.

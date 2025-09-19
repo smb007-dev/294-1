@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        let numbers = [];
-        let number;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let numbers = [];
+            let number;
 
-        do {
-            number = prompt("Gib eine Zahl ein (Abbruch mit 0):");
-            number = Number(number);
-            if (number !== 0) {
-                numbers.push(number);
-            }
-        } while (number !== 0);
+            do {
+                number = prompt("Gib eine Zahl ein (Abbruch mit 0):");
+                number = Number(number);
+                if (number !== 0) {
+                    numbers.push(number);
+                }
+            } while (number !== 0);
 
-        let sum = 0;
-        numbers.forEach(function(num) {
-            sum += num;
-        });
+            let sum = 0;
+            numbers.forEach(function(num) {
+                sum += num;
+            });
 
-        alert("Die Summe der eingegebenen Zahlen ist: " + sum);
-    </script>
-</body>
+            alert("Die Summe der eingegebenen Zahlen ist: " + sum);
+        </script>
+    </body>
 </html>

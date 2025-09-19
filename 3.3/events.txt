@@ -1,0 +1,21 @@
+load – Dokument oder Seite wurde vollständig geladen.
+
+blur – Das Element / die App verliert den Fokus (weggeklickt).
+
+focus – Das Element / die App bekommt den Fokus wieder.
+
+mousedown – Mausknopf wird heruntergedrückt.
+
+click – Mausknopf wurde gedrückt und losgelassen.
+
+cancel – Ein Dialog/Fenster wurde geschlossen oder abgebrochen.
+
+keydown – Sobald eine Taste gedrückt wird (beim Herunterdrücken).
+
+beforeinput – Wird ausgelöst, bevor der Eingabewert geändert wird. Hier könnte man die Änderung noch verhindern (event.preventDefault()).
+
+input – Wert hat sich tatsächlich geändert (z. B. ein neuer Buchstabe wurde ins Feld geschrieben).
+
+keyup – Taste wurde wieder losgelassen.
+
+change – Eingabewert wurde geändert und das Feld anschließend verlassen (Fokusverlust).

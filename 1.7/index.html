@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        const number = Math.floor(Math.random() * 100);
+        let guess;
+
+        while (true) {
+            guess = parseInt(prompt("Errate die Zahl zwischen 1 und 100:"));
+            
+            if (guess < number) {
+                alert("Zu niedrig! Versuch es nochmal.");
+            } else if (guess > number) {
+                alert("Zu hoch! Versuch es nochmal.");
+            } else {
+                alert("Glückwunsch! Du hast die Zahl erraten: " + number);
+                break;
+            }
+        }
+
+    </script>
 </head>
 <body>
-    <script>
-        rand = Math.floor(Math.random() * 100);
-        let number = prompt("Gib eine Zahl ein:");
-        if (number > rand) {
-            alert("Die Zahl ist zu gross!");
-        } else if (number < rand) {
-            alert("Die Zahl ist zu klein!");
-        } else {
-            alert("Du hast die Zahl erraten!");
-        }
-    </script>
+
 </body>
 </html>

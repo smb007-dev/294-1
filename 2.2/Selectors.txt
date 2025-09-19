@@ -1,0 +1,7 @@
+document.getElementsByClassName("voy-qb-item-value1 voy-wikidata-content")[0].innerText
+
+document.getElementsByClassName("voy-regionName").length
+
+
+
+document.getElementsByClassName("voy-qb-item voy-qb-item-area")[0].innerText

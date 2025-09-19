@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cup Shuffle Game</title>
+
+  <style>
+    #cups {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+    }
+    #cups li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul id="cups">
+      <li id="cup1"><img src="cup.png" data-state = "closed" alt="cup1"></li>
+      <li id="cup2"><img src="cup.png" data-state = "closed" alt="cup2"></li>
+      <li id="cup3"><img src="cup.png" data-state = "closed" alt="cup3"></li>
+    </ul>
+  </div>
+
+  <button id="shuffle">Shuffle</button>
+
+  <script>
+    const cups = document.querySelectorAll("#cups li img");
+    const btnEl = document.getElementById("shuffle");
+
+
+    cups.forEach(cup => {
+        cup.addEventListener("click", () => {
+            if (cup.dataset.state === "closed") {
+                cup.src = "cup-open.png";
+                cup.dataset.state = "open";
+            } else {
+                cup.src = "cup.png";
+                cup.dataset.state = "closed";
+            }
+        });
+    });
+
+    btnEl.addEventListener("click", () => {
+      const cupsArray = Array.from(cups);
+    });
+  </script>
+</body>
+</html>
