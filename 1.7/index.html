@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        const number = Math.floor(Math.random() * 100);
-        let guess;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>Guessing Game</title>
+    </head>
+    <body>
+        <form id="guessing">
+            <label for="guess">Errate die Zahl zwischen 1 und 100:</label>
+            <input id="guess" name="guess">
+            <button type="submit">Raten</button>
+        </form>
+        <div id="output"></div>
+        <script>
+            const number = Math.floor(Math.random() * 100);
+            const form = document.getElementById("guessing");
+            const input = document.getElementById("guess");
+            const output = document.getElementById("output");
 
-        while (true) {
-            guess = parseInt(prompt("Errate die Zahl zwischen 1 und 100:"));
-            
-            if (guess < number) {
-                alert("Zu niedrig! Versuch es nochmal.");
-            } else if (guess > number) {
-                alert("Zu hoch! Versuch es nochmal.");
-            } else {
-                alert("Glückwunsch! Du hast die Zahl erraten: " + number);
-                break;
-            }
-        }
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                const guess = parseInt(input.value);
 
-    </script>
-</head>
-<body>
-
-</body>
+                if (guess < number) {
+                    output.innerText = "Zu niedrig! Versuch es nochmal.";
+                } else if (guess > number) {
+                    output.innerText = "Zu hoch! Versuch es nochmal.";
+                } else {
+                    output.innerText = "Glückwunsch! Du hast die Zahl erraten: " + number;
+                }
+                input.value = "";
+            });
+        </script>
+    </body>
 </html>

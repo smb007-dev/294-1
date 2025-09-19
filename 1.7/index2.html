@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="guessing">
+        <label for="guess">Errate eine Zahl</label>
+        <input id="guess">
+        <button type="submit">Raten</button>
+    </form>
+    <div id="output"></div>
+    <script>
+        const number = Math.floor(Math.random() * 100);
+        const form = document.getElementById("guessing");
+        const input = document.getElementById("guess");
+        const output = document.getElementById("output");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const guess = parseInt(input.value, 10);
+
+            if (guess < number) {
+                output.textContent = "Zu niedrig! Versuch es nochmal.";
+            } else if (guess > number) {
+                output.textContent = "Zu hoch! Versuch es nochmal.";
+            } else {
+                output.textContent = "Glückwunsch! Du hast die Zahl erraten: " + number;
+            }
+            input.value="";
+        })
+    </script>
+</body>
+</html>
